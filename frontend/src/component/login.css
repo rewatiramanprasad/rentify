@@ -1,0 +1,62 @@
+.outerContainer {
+/* flex: 1; */
+background-color: red;
+align-items: center;
+justify-content: center;
+}
+.innerContainer {
+    background-color: blue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    display: flex;
+    width: 600px; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .login,
+  .signup {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .login {
+    background-color: #f0f0f0;
+  }
+  
+  .signup {
+    background-color: #e0e0e0;
+  }
+  
+  input {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    /* background-color: green; */
+    color: black;
+  }
+  .button{
+
+    background-color: rgb(251, 47, 75);
+    font-weight: bold;
+    color: black;
+    width: 100px;
+  }
+
+  .alert{
+    background-color: rgb(32, 217, 32);
+  }

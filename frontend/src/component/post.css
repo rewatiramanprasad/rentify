@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.box1 {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    width: auto; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: flex-start;
+    
+    background-color: lightgray;
+  }
+  .box2{
+    display:flex;
+    flex: auto;
+    flex-direction: row;
+    background-color: red;
+  }
+button{
+    background-color: red;
+    margin-top: 25px;
+    width: 80px;
+    font-weight:bold;
+}
