@@ -11,7 +11,7 @@ const  Feed=()=> {
     return (<>
     
     <h1>Feed</h1>
-    <h2>{data}</h2>
+    {/* <h2>{data}</h2> */}
     
     
     </>);
