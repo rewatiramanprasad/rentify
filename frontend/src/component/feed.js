@@ -6,8 +6,8 @@ import MyContext from "./context";
 const  Feed=()=> {
     
     
-    const {user} = useContext(MyContext);
-    console.log(user)
+    // const {user} = useContext(MyContext);
+    // console.log(user)
     return (<>
     
     <h1>Feed</h1>
