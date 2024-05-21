@@ -1,11 +1,12 @@
-import { useContext, useEffect, useState,useHistory } from "react";
-import { useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useLocation,useNavigate } from "react-router-dom";
+
 import MyContext from "./context";
 
 
 const  Feed=()=> {
     const location =useLocation();
-    const history =useHistory();
+    const history =useNavigate();
     const email=location.state.user[0].email;
     const [feed,setFeed]=useState([]);
     const handlePost=()=>{
