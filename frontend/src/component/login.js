@@ -2,6 +2,7 @@ import React, { useState,createContext } from "react";
 import "./login.css";
 import { useNavigate  } from 'react-router-dom';
 import MyContext from "./context";
+import Header from "./header";
 
 const Login = () => {
     
@@ -17,7 +18,7 @@ const Login = () => {
 
   const handleLogin = async() => {
     try {
-        const response = await fetch("http://localhost:5000/login", {
+        const response = await fetch("https://rentifyapi.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +42,7 @@ const Login = () => {
 
   const handleSignup=async()=>{
     try {
-        const response = await fetch("http://localhost:5000/signup", {
+        const response = await fetch("https://rentifyapi.vercel.app/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,7 +68,9 @@ const Login = () => {
 
   return (
     <MyContext.Provider value={user}>
+      <><Header/>
     <div className="container">
+      
         {showAlert && (
         <div className="alert">
           Signup successful! You can now login.
@@ -151,6 +154,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
     </MyContext.Provider>
   );
 };

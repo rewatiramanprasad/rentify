@@ -1,14 +1,43 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./post.css";
 
 const Post = () => {
+  const location =useLocation();
+  console.log(location)
   const [place, setPlace] = useState("");
   const [area, setArea] = useState("");
   const [nob, setNob] = useState("");
   const [bathroom, setBathroom] = useState("");
   const [nearby, setNearby] = useState("");
-
-  const handlePost = () => {};
+  const [showAlert, setShowAlert] = useState(false);
+  const handlePost =async () => {
+    try {
+      const response = await fetch("https://rentifyapi.vercel.app/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        place: place,
+        area: area,
+        nob:nob,
+        bathroom:bathroom,
+        nearby:nearby,
+        email:location.email
+      }),
+    });
+    const data = await response.json();
+    if (data.sucess){
+      setShowAlert(true);
+      setTimeout(() => {
+          setShowAlert(false);
+        }, 3000); 
+    }
+  } catch (error) {
+      
+  }
+  };
 
   return (
     <div className="container">
@@ -35,7 +64,15 @@ const Post = () => {
 
         <button type="submit" onClick={handlePost}>Post</button>
       </div>
-      <div className="box2">////////</div>
+      <div className="box2">
+        <div>
+        {showAlert && (
+        <div className="alert">
+          Signup successful! You can now login.
+        </div>
+      )}
+        </div>
+      </div>
     </div>
   );
 };
